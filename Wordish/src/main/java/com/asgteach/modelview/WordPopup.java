@@ -19,7 +19,7 @@ public class WordPopup {
             final Popup popup = new Popup();
             popup.setAutoFix(true);
             Label label = new Label(message);
-            label.getStylesheets().add(WordishApp.class.getResource("style.css").toExternalFo‌​rm());
+            label.getStylesheets().add(WordishApp.class.getResource("style.css").toExternalForm());
             label.getStyleClass().add("popup");
             popup.getContent().add(label);
             return popup;

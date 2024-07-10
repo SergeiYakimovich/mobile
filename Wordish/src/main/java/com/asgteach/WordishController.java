@@ -281,7 +281,8 @@ public class WordishController {
 
         if (!wordData.isAWord(guess)) {
             // bad word
-            WordPopup.show("Word is not in the valid word list.", enterButton);
+//            WordPopup.show("Word is not in the valid word list.", enterButton);
+            WordPopup.show("Number has duplicated digits.", enterButton);
             animateBadWord(list);
             processingWord.set(false);
             return;

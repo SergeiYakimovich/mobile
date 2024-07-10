@@ -5,10 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class WordData {
@@ -45,17 +42,35 @@ public class WordData {
     }
     
     public boolean isAWord(String guess) {
-        return words.stream().anyMatch(w -> w.equals(guess));
+        return hasDistinctCharacters(guess);
+//        return words.stream().anyMatch(w -> w.equals(guess));
     }
 
     int index;
     public void setNewWord() {   
         do {
-            index = rand.nextInt(words.size());
+//            index = rand.nextInt(words.size());
+            theWord = getRandomNumber();
+            index = Integer.parseInt(theWord);
         } while (!usedIndices.add(index));
 
-        theWord = words.get(index);
+//        theWord = words.get(index);
         System.out.println("theWord = " + theWord + ", index =" + index);
+    }
+
+    private String getRandomNumber() {
+        Set<Integer> set = new LinkedHashSet<>();
+        while (set.size() < 5) {
+            set.add(rand.nextInt(10));
+        }
+        return set.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+    }
+
+    private boolean hasDistinctCharacters(String word) {
+        return word.chars().distinct().count() == word.length();
     }
 
 }
