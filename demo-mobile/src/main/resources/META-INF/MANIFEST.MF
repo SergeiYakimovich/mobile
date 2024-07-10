@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Main-Class: com.example.mobile.HelloApplication
+Class-Path: jackson-annotations-2.12.1.jar javafx-graphics-19-win.jar ja
+ vafx-base-19.jar tilesfx-17.1.15.jar storage-4.0.13.jar validatorfx-0.4
+ .0.jar javafx-graphics-19.jar kotlin-stdlib-1.6.0-modular.jar annotatio
+ ns-13.0.jar javafx-controls-19.jar junit-jupiter-api-5.9.1.jar fxgl-gam
+ eplay-17.2.jar javafx-base-19-win.jar ikonli-core-12.3.1.jar lifecycle-
+ 4.0.13.jar jackson-core-2.12.1.jar formsfx-core-11.5.0.jar fxgl-core-17
+ .2.jar fxgl-scene-17.2.jar countries-17.0.23.jar heatmap-17.0.12.jar fx
+ gl-io-17.2.jar opentest4j-1.2.0.jar javafx-media-19-win.jar javafx-web-
+ 19-win.jar javafx-media-19.jar controlsfx-11.1.2.jar fxgl-entity-17.2.j
+ ar toolbox-17.0.26.jar ikonli-javafx-12.3.1.jar toolboxfx-17.0.29.jar b
+ ootstrapfx-core-0.4.0.jar util-4.0.13.jar junit-jupiter-engine-5.9.1.ja
+ r javafx-swt.jar javafx.web.jar javafx.base.jar javafx.fxml.jar javafx.
+ media.jar javafx.swing.jar javafx.controls.jar javafx.graphics.jar java
+ fx-controls-19-win.jar audio-4.0.13.jar kotlin-stdlib-common-1.6.0.jar 
+ junit-platform-commons-1.9.1.jar junit-platform-engine-1.9.1.jar fxgl-1
+ 7.2.jar javafx-fxml-19-win.jar jackson-databind-2.12.1.jar
+

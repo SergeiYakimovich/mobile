@@ -4,8 +4,9 @@ build/
 
 *.log
 
-.gitignore
+#.gitignore
 
+target/
 libs/
 out/
 tmp/
