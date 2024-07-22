@@ -1,10 +1,3 @@
-# Camera
-
-## Quick Instructions
-
-We use [GluonFX plugin](https://docs.gluonhq.com/) to build a native image for platforms including desktop, android and iOS.
-Please follow the prerequisites as stated [here](https://docs.gluonhq.com/#_requirements).
-
 ### Desktop
 
 Run the application on JVM/HotSpot:

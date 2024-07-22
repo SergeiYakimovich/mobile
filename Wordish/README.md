@@ -1,7 +1,3 @@
-# Wordish
-
-Wordish is a JavaFX implementation based on the popular word-guessing game Wordle.
-
 ## Build and Run using JVM
 
 Uses the GluonFX maven plugin
@@ -37,5 +33,3 @@ $ mvn -Pandroid gluonfx:package
 $ mvn -Pandroid gluonfx:install
 $ mvn -Pandroid gluonfx:nativerun
 ```
-## License
-[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
