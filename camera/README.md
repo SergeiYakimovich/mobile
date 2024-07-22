@@ -1,46 +1,56 @@
 # Camera
 
-This Gluon sample was generated from https://start.gluon.io
+## Quick Instructions
 
-## Basic Requirements
+We use [GluonFX plugin](https://docs.gluonhq.com/) to build a native image for platforms including desktop, android and iOS.
+Please follow the prerequisites as stated [here](https://docs.gluonhq.com/#_requirements).
 
-A list of the basic requirements can be found online in the [Gluon documentation](https://docs.gluonhq.com/#_requirements).
+### Desktop
 
-## Quick instructions
-
-### Run the sample on JVM/HotSpot:
+Run the application on JVM/HotSpot:
 
     mvn gluonfx:run
 
-### Run the sample as a native image:
+Run the application and explore all scenarios to generate config files for the native image with:
 
-    mvn gluonfx:build gluonfx:nativerun
+    mvn gluonfx:runagent
 
-### Run the sample as a native android image:
+Build a native image using:
 
-    mvn -Pandroid gluonfx:build gluonfx:package gluonfx:install gluonfx:nativerun
+    mvn gluonfx:build
 
-### Run the sample as a native iOS image:
+Run the native image app:
 
-    mvn -Pios gluonfx:build gluonfx:package gluonfx:install gluonfx:nativerun
+    mvn gluonfx:nativerun
 
-## Selected features
+### Android
 
-This is a list of all the features that were selected when creating the sample:
+Build a native image for Android using:
 
-### JavaFX 21 Modules
+    mvn gluonfx:build -Pandroid
 
- - javafx-base
- - javafx-graphics
- - javafx-controls
- - javafx-fxml
+Package the native image as an 'apk' file:
 
-### Gluon Features
+    mvn gluonfx:package -Pandroid
 
- - Glisten: build platform independent user interfaces
- - Glisten Afterburner: minimalistic dependency injection
- - Attach display
- - Attach lifecycle
- - Attach pictures
- - Attach statusbar
- - Attach storage
+Install it on a connected android device:
+
+    mvn gluonfx:install -Pandroid
+
+Run the installed app on a connected android device:
+
+    mvn gluonfx:nativerun -Pandroid
+
+### iOS
+
+Build a native image for iOS using:
+
+    mvn gluonfx:build -Pios
+
+Install and run the native image on a connected iOS device:
+
+    mvn gluonfx:nativerun -Pios
+
+Create an IPA file (for submission to TestFlight or App Store):
+
+    mvn gluonfx:package -Pios

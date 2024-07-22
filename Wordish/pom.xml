@@ -90,9 +90,9 @@
                 <version>${gluonfx.plugin.version}</version>
                 <configuration>
                     <target>${gluonfx.target}</target>
-
                     <mainClass>${main.class}</mainClass>
                     <verbose>true</verbose>
+                    <graalvmHome>C:\Program Files\Java\graalvm-jdk-22.0.1+8.1</graalvmHome>
                     <reflectionList>
                         <list>javafx.scene.chart.BarChart</list>
                         <list>javafx.scene.chart.CategoryAxis</list>

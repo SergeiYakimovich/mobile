@@ -1,3 +1,16 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url = uri('https://nexus.gluonhq.com/nexus/content/repositories/releases')
+        }
+    }
+    dependencies {
+        classpath 'org.javafxports:jfxmobile-plugin:1.0.7'
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
@@ -6,20 +19,28 @@ plugins {
     id 'org.beryx.jlink' version '2.25.0'
 }
 
+//apply plugin: 'org.javafxports.jfxmobile'
+
+
+
 group 'com.example'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-//    google()
+    google()
+    jcenter()
+    maven {
+        url = uri('https://nexus.gluonhq.com/nexus/content/repositories/releases')
+    }
 }
 
 ext {
     junitVersion = '5.9.1'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
+//sourceCompatibility = '17'
+//targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -55,6 +76,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
+    // https://mvnrepository.com/artifact/com.gluonhq/gvmbuilder
+    implementation 'com.gluonhq:gvmbuilder:0.0.34'
+
+    // https://mvnrepository.com/artifact/org.javafxports/jfxmobile-plugin
+    implementation 'org.javafxports:jfxmobile-plugin:2.0.30'
+
+
 
 }
 
@@ -73,3 +101,10 @@ jlink {
 jlinkZip {
     group = 'distribution'
 }
+
+//jfxmobile {
+//    android {
+//        applicationPackage = 'com.example.mobile'
+//        androidSdk = 'c:\\Program Files\\Android\\Android Studio'
+//    }
+//}

@@ -1,4 +1,4 @@
-package com.mycompany.sample.service;
+package root.pictureservice;
 
 import com.gluonhq.attach.pictures.PicturesService;
 import com.gluonhq.charm.glisten.control.AppBar;
@@ -16,8 +16,7 @@ public class BasicView extends View {
         Label label = new Label("\n"
                 + "PicturesService Android :\n"
                 + "Can't take photo.\n"
-                + "Can't load from gallery more than once.\n"
-                + "https://github.com/gluonhq/attach/issues/259");
+                + "Can't load from gallery more than once.\n");
         label.setStyle("-fx-text-alignment: center");
         setAlignment(label, Pos.CENTER);
 
@@ -44,3 +43,4 @@ public class BasicView extends View {
         appBar.setTitleText("Test Take Photo Application");
     }
 }
+
