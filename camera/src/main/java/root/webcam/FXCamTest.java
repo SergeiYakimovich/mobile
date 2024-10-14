@@ -2,12 +2,16 @@ package root.webcam;
 
 import com.github.sarxos.webcam.Webcam;
 import javafx.application.Application;
+import javafx.beans.binding.Bindings;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.awt.image.BufferedImage;
@@ -31,43 +35,44 @@ public class FXCamTest extends Application {
         }
 
         try {
-            Webcam cam = service.getCam();
-            cam.open();
-            Thread.sleep(1000);
-
-            String camName = cam.getName();
-            String deviceName = cam.getDevice().getName();
-            BufferedImage camImage = cam.getImage();
-
-//                Button startStop = new Button();
-//                startStop.textProperty().bind(Bindings.
-//                        when(service.runningProperty()).
-//                        then("Stop").
-//                        otherwise("Start"));
+//            Webcam cam = service.getCam();
+//            cam.open();
+//            Thread.sleep(1000);
 //
-//                startStop.setOnAction(e -> {
-//                    if (service.isRunning()) {
-//                        service.cancel();
-//                    } else {
-//                        service.restart();
-//                    }
-//                });
-//
-//                WebCamView view = new WebCamView(service);
-//
-//                BorderPane root = new BorderPane(view.getView());
-//                BorderPane.setAlignment(startStop, Pos.CENTER);
-//                BorderPane.setMargin(startStop, new Insets(5));
-//                root.setBottom(startStop);
+//            String camName = cam.getName();
+//            String deviceName = cam.getDevice().getName();
+//            BufferedImage camImage = cam.getImage();
 
-            Image image = SwingFXUtils.toFXImage(camImage, null);
-            Label label = new Label("Cam Name : " + camName + "\nDevice Name : " + deviceName);
-            label.setAlignment(Pos.CENTER);
-            label.setGraphic(new ImageView(image));
+                Button startStop = new Button();
+                startStop.textProperty().bind(Bindings.
+                        when(service.runningProperty()).
+                        then("Stop").
+                        otherwise("Start"));
 
-            Scene scene = new Scene(label);
+                startStop.setOnAction(e -> {
+                    if (service.isRunning()) {
+                        service.cancel();
+                    } else {
+                        service.restart();
+                    }
+                });
+
+                WebCamView view = new WebCamView(service);
+
+                BorderPane root = new BorderPane(view.getView());
+                BorderPane.setAlignment(startStop, Pos.CENTER);
+                BorderPane.setMargin(startStop, new Insets(5));
+                root.setBottom(startStop);
+
+//            Image image = SwingFXUtils.toFXImage(camImage, null);
+//            Label label = new Label("Cam Name : " + camName + "\nDevice Name : " + deviceName);
+//            label.setAlignment(Pos.CENTER);
+//            label.setGraphic(new ImageView(image));
+//            Scene scene = new Scene(label);
+//            primaryStage.setScene(scene);
+
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-
             primaryStage.show();
         } catch (Exception e) {
             showError(primaryStage, "Error starting Webcam : " + e.getMessage() + "\n" + Arrays.toString(e.getStackTrace()));

@@ -15,6 +15,8 @@ import org.opencv.objdetect.Objdetect;
 import org.opencv.videoio.VideoCapture;
 
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.net.URL;
 
 public class CameraStream extends Application {
     private VideoCapture capture;
@@ -22,6 +24,9 @@ public class CameraStream extends Application {
     public void start(Stage stage) throws Exception {
 //        OpenCV.loadShared();
         System.load("c:\\Program Files\\Java\\opencv\\build\\java\\x64\\opencv_java490.dll");
+//        URL resource = CameraStream.class.getClassLoader().getResource("root/opencv_java490.dll");
+//        System.load(resource.getPath());
+
         capture=  new VideoCapture(0); // The number is the ID of the camera
         ImageView imageView = new ImageView();
         HBox hbox = new HBox(imageView);
